@@ -1,0 +1,4 @@
+@import "tailwindcss";
+.custom-shape{
+border-radius: 4% 20% 4% 20%;
+}
