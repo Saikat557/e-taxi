@@ -17,7 +17,7 @@ const homePage = () => {
       </section>
 
       <section>
-        <button className="bg-[#ffbe30] px-7 text-lg rounded-xl text-black py-2 shadow-lg shadow-yellow-400/50 cursor-pointer"><Link to="/user/account">start</Link></button>
+        <button className="bg-[#ffbe30] px-7 text-lg rounded-xl text-black py-2 shadow-lg shadow-yellow-400/50 cursor-pointer"><Link to="/landingpage">start</Link></button>
       </section>
     </div>
   );
