@@ -1,7 +1,7 @@
 import { ChevronUp, MapPin,SquareDot,ChevronDown } from "lucide-react";
-const SelectLocationPanel =({locationPanel,handlePanelOpen,setLocationPanel,setconfirmLocationPanel})=>{
+const SelectLocationPanel =({locationPanel,handlePanelOpen,setLocationPanel,setconfirmLocationPanel, anyActivePanel })=>{
     return(
-        <section className={`w-full max-w-[400px] mx-auto bg-white py-2 px-4 absolute bottom-0  duration-500 ease-in-out ${locationPanel?"h-full":"h-1/3"} z-1`}>
+        <section className={`w-full h-1/3 max-w-[400px] mx-auto bg-white py-2 px-4 absolute bottom-0  duration-500 ease-in-out ${locationPanel?"h-full":"h-1/3"} ${anyActivePanel?"translate-y-full":"translate-y-0"} z-1`}>
         <div className="flex flex-col items-center justify-center w-full gap-5  mb-10">
           {!locationPanel && <ChevronUp onClick={handlePanelOpen} />}
           {locationPanel && <ChevronDown onClick={()=>{setLocationPanel(false)}}/>}

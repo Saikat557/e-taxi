@@ -1,7 +1,8 @@
 import {ChevronDown} from "lucide-react"
 const ConfirmLocationPanel = ({confirmLocationPanel,setconfirmLocationPanel,setRideDetailsPanel})=>{
+    
     return (
-<div className={`h-1/3 w-full bg-white  flex flex-col max-w-[400px] gap-4 px-4  py-2 absolute ease-in-out transition-all duration-500 overflow-y-auto  z-2 ${confirmLocationPanel?"translate-y-0":"translate-y-full"}`}>
+<div className={`h-1/3 w-full bg-white  flex flex-col max-w-[400px] gap-4 px-4  py-2 absolute ease-in-out transition-all duration-500 bottom-0 overflow-y-auto ${confirmLocationPanel?"translate-y-0":"translate-y-full"} z-2 `}>
    <div className="flex flex-col items-center w-full">
     <ChevronDown className="text-gray-400" onClick={()=>{setconfirmLocationPanel(false)}} />
        <div className="w-full">

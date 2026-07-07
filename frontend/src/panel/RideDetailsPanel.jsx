@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMethodPanel}) => {
-    console.log(rideDetailsPanel)
+  
   return (
     <div
      className={`w-full h-1/3 absolute  max-w-[400px] bg-white overflow-y-auto py-2 px-4 ease-in-out duration-500 bottom-0 z-3 transition-all ${rideDetailsPanel?"translate-y-0":"translate-y-full"}`}>
