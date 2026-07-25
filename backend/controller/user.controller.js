@@ -1,5 +1,6 @@
 const {createUser,findUserByEmailAndMatchPassword} = require("../services/user.service")
 const {validationResult } = require("express-validator")
+const {createToken} = require("../services/jwt.service")
 
 
 const userSignupController= async (req,res)=>{
@@ -17,8 +18,10 @@ if(result["errors"].length>0){
     const lastName = fullName.split(" ")[1]
 
     const user = await createUser(firstName,lastName,email,password);
+    const token = createToken({email:user.email,fullName:user.fullName})
     res.status(201).json({
         message:"user created successfully",
+        token:token,
         user
     })
 
@@ -33,7 +36,8 @@ if(result["errors"].length>0){ return res.json(result["errors"])}
 
     try{
 
-      const user = await findUserByEmailAndMatchPassword(email,password)  
+      const user = await findUserByEmailAndMatchPassword(email,password) 
+      const token = createToken({email:user.email,fullName:user.fullName}) 
      
       if(!user){
         return res.status(404).json({
@@ -42,6 +46,7 @@ if(result["errors"].length>0){ return res.json(result["errors"])}
       }
       res.json({
         message:"login successfully",
+        token:token,
         user
       })
 
@@ -53,6 +58,8 @@ if(result["errors"].length>0){ return res.json(result["errors"])}
     }
 
 }
+
+
 
 module.exports = {userSignupController,userLoginController}
 

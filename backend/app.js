@@ -1,5 +1,7 @@
 const express= require("express")
 const userRouter = require("./routes/user.route")
+const mapRouter = require("./routes/map.route")
+require("dotenv").config()
 
 const app = express()
 
@@ -11,5 +13,6 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/user",userRouter)
+app.use("/map",mapRouter)
 
 module.exports= app

@@ -18,7 +18,8 @@ const createUser =  async (firstName,lastName,email,password)=>{
 }
 
 const findUserByEmailAndMatchPassword = async(email,password)=>{
-    const user = await USER.findOne({email})
+    const user = await USER.findOne({email}).select("+password")
+  
 
     if(!user){
         throw new Error("email or password does not match")
