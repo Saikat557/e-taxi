@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
-const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearchingPanel }) => {
+const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearchingPanel,setPayment }) => {
   const [cashBtn, setCashBtn] = useState(true);
   const [gpayBtn, setGpayBtn] = useState(false);
   const [phonpeBtn, setPhonepeBtn] = useState(false);
@@ -29,6 +29,7 @@ const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearc
             setGpayBtn(false)
             setPhonepeBtn(false)
             setPaytmBtn(false)
+            setPayment("cash")
           }}
         >
           <label  className="flex items-center gap-3 ">
@@ -54,6 +55,7 @@ const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearc
             setGpayBtn(true)
             setPhonepeBtn(false)
             setPaytmBtn(false)
+             setPayment("gpay")
           }}>
           <label  className="flex items-center gap-3 ">
             <img
@@ -73,6 +75,7 @@ const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearc
             setGpayBtn(false)
             setPhonepeBtn(true)
             setPaytmBtn(false)
+             setPayment("phonepe")
           }}>
           <label className="flex items-center gap-3 ">
             <img
@@ -92,6 +95,7 @@ const PaymentMethod = ({ paymentMethodPanel, setPaymentMethodPanel,setRiderSearc
             setGpayBtn(false)
             setPhonepeBtn(false)
             setPaytmBtn(true)
+             setPayment("paytm")
           }}
         >
           <label  className="flex items-center gap-3 ">

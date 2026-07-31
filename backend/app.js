@@ -1,12 +1,15 @@
 const express= require("express")
 const userRouter = require("./routes/user.route")
 const mapRouter = require("./routes/map.route")
+const cors = require("cors")
 require("dotenv").config()
 
 const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({entended:true}))
+app.use(cors())
+
 
 app.get("/",(req,res)=>{
     res.send("hello")

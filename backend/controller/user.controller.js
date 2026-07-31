@@ -1,6 +1,7 @@
 const {createUser,findUserByEmailAndMatchPassword} = require("../services/user.service")
 const {validationResult } = require("express-validator")
 const {createToken} = require("../services/jwt.service")
+const userModel = require("../models/user.model")
 
 
 const userSignupController= async (req,res)=>{
@@ -16,8 +17,13 @@ if(result["errors"].length>0){
 
     const firstName = fullName.split(" ")[0]
     const lastName = fullName.split(" ")[1]
+    const isUser = await userModel.findOne({email})
+    if(isUser){
+        return res.status(409).json({message:"user already exist"})
+    }
 
     const user = await createUser(firstName,lastName,email,password);
+    
     const token = createToken({email:user.email,fullName:user.fullName})
     res.status(201).json({
         message:"user created successfully",

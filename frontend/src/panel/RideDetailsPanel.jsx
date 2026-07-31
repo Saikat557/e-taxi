@@ -1,11 +1,13 @@
 import { Star } from "lucide-react";
-const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMethodPanel}) => {
+const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMethodPanel,setVehicle}) => {
   
   return (
     <div
      className={`w-full h-1/3 absolute  max-w-[400px] bg-white overflow-y-auto py-2 px-4 ease-in-out duration-500 bottom-0 z-3 transition-all ${rideDetailsPanel?"translate-y-0":"translate-y-full"}`}>
       <section className="flex  gap-2 overflow-x-auto">
-        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3  shrink-0 active:bg-gray-300">
+        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3  shrink-0 active:bg-gray-300" onClick={()=>{
+          setVehicle("car")
+        }}>
           <div className="flex gap-2 justify-start items-center mb-5">
             <img
               src="image/car-image.png"
@@ -32,15 +34,17 @@ const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMeth
             <div className="bg-white px-3 py-1 rounded-xl">3 gears</div>
           </div>
         </div>
-        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3 shrink-0 active:bg-gray-300">
+        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3 shrink-0 active:bg-gray-300" onClick={()=>{
+          setVehicle("bike")
+        }}>
           <div className="flex gap-2 justify-start items-center mb-5">
             <img
-              src="image/car-image.png"
+              src="image/bike.png"
               alt="car Image"
               className="w-25 h-15 object-cover bg-[#db7a9a] aspect-[7/3] rounded-xl mr-4"
             />
             <div>
-              <h1 className="text-xl font-semibold">Honda City</h1>
+              <h1 className="text-xl font-semibold">bike</h1>
               <p className="text-gray-400 test-xs">
                 price: <span>57$/km</span>
               </p>
@@ -59,15 +63,17 @@ const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMeth
             <div className="bg-white px-3 py-1 rounded-xl">3 gears</div>
           </div>
         </div>
-        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3 shrink-0 active:bg-gray-300">
-          <div className="flex gap-2 justify-start items-center mb-5">
+        <div className="w-[90%] h-auto bg-gray-200/80 rounded-xl px-4 py-6 mb-3 shrink-0 active:bg-gray-300" onClick={()=>{
+          setVehicle("auto")
+        }}>
+          <div className="flex gap-2 justify-start items-center mb-5 ">
             <img
-              src="image/car-image.png"
+              src="image/auto.png"
               alt="car Image"
-              className="w-25 h-15 object-cover bg-[#db7a9a] aspect-[7/3] rounded-xl mr-4"
+              className="w-30 h-20  object-contain bg-[#fdb914] aspect-[7/3] rounded-xl mr-4"
             />
             <div>
-              <h1 className="text-xl font-semibold">Honda City</h1>
+              <h1 className="text-xl font-semibold">auto</h1>
               <p className="text-gray-400 test-xs">
                 price: <span>57$/km</span>
               </p>

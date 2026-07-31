@@ -21,6 +21,22 @@ const LandingPage = () => {
     const [activeRidePanel, setActiveRidePanel] = useState(false)
     const [rideCompletePanel, setRideCompletePanel] = useState(false)
 
+    //all fields for ride
+
+    const [pickup,setPickup]= useState("")
+    const [dest,setDest] = useState("")
+    const [vehicle,setVehicle]= useState("")
+    const [payment,setPayment] = useState("")
+    const [driver,setDriver] = useState("")
+
+    useEffect(()=>{
+      console.log(pickup)
+      console.log(dest)
+      console.log(vehicle)
+      console.log(payment)
+      console.log(driver)
+    })
+
 useEffect(()=>{
  
   if(confirmLocationPanel||rideDetailsPanel||paymentMethodPanel||riderSearchingPanel||carFoundPanel||carArrivingPanel||activeRidePanel||rideCompletePanel){
@@ -43,12 +59,12 @@ useEffect(()=>{
         alt="map image"
         className="w-full h-full object-cover sticky"
       />
-      <SelectLocationPanel handlePanelOpen={handlePanelOpen} locationPanel={locationPanel} anyActivePanel={anyActivePanel}  setLocationPanel={setLocationPanel} setconfirmLocationPanel={setconfirmLocationPanel}/>
-      <ConfirmLocationPanel confirmLocationPanel={confirmLocationPanel} setconfirmLocationPanel={setconfirmLocationPanel} setRideDetailsPanel={setRideDetailsPanel }/>
-      <RideDetailsPanel rideDetailsPanel={rideDetailsPanel} setRideDetailsPanel={setRideDetailsPanel} setPaymentMethodPanel={setPaymentMethodPanel} />
-      <PaymentMethodPanel paymentMethodPanel={paymentMethodPanel} setPaymentMethodPanel={setPaymentMethodPanel} setRiderSearchingPanel={setRiderSearchingPanel}/>
+      <SelectLocationPanel setPickup={setPickup} setDest={setDest} handlePanelOpen={handlePanelOpen} locationPanel={locationPanel} anyActivePanel={anyActivePanel}  setLocationPanel={setLocationPanel} setconfirmLocationPanel={setconfirmLocationPanel}/>
+      <ConfirmLocationPanel pickup={pickup} dest={dest} confirmLocationPanel={confirmLocationPanel} setconfirmLocationPanel={setconfirmLocationPanel} setRideDetailsPanel={setRideDetailsPanel }/>
+      <RideDetailsPanel setVehicle={setVehicle} rideDetailsPanel={rideDetailsPanel} setRideDetailsPanel={setRideDetailsPanel} setPaymentMethodPanel={setPaymentMethodPanel} />
+      <PaymentMethodPanel setPayment={setPayment} paymentMethodPanel={paymentMethodPanel} setPaymentMethodPanel={setPaymentMethodPanel} setRiderSearchingPanel={setRiderSearchingPanel}/>
       <RiderSearchingPanel riderSearchingPanel={riderSearchingPanel} setCarFoundPanel={setCarFoundPanel} setRiderSearchingPanel={setRiderSearchingPanel} />
-      <CarFoundPanel carFoundPanel={carFoundPanel} setCarFoundPanel={setCarFoundPanel} setCarArrivingPanel={setCarArrivingPanel} />
+      <CarFoundPanel setDriver={setDriver} carFoundPanel={carFoundPanel} setCarFoundPanel={setCarFoundPanel} setCarArrivingPanel={setCarArrivingPanel} />
       <CarArrivingPanel carArrivingPanel={carArrivingPanel} setCarArrivingPanel={setCarArrivingPanel} setActiveRidePanel={setActiveRidePanel} />
       <ActiveRidePanel
         activeRidePanel={activeRidePanel}

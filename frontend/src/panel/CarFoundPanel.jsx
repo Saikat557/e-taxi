@@ -1,5 +1,5 @@
 import {ChevronDown} from "lucide-react"
-const CarFoundPanel = ({carFoundPanel,setCarFoundPanel,setCarArrivingPanel}) => {
+const CarFoundPanel = ({carFoundPanel,setCarFoundPanel,setCarArrivingPanel,setDriver}) => {
   return (
     <div className={`h-1/3 w-full bg-white absolute bottom-0 ease-in-out duration-500 z-7  py-2 flex flex-col justify-evenly ${carFoundPanel?"translate-y-0":"translate-y-full"}`}>
         
@@ -16,7 +16,8 @@ const CarFoundPanel = ({carFoundPanel,setCarFoundPanel,setCarArrivingPanel}) => 
       </div>
       </div>
       {/* mid */}
-      <div className="flex items-center justify-between px-4 mb-5">
+     <div className="px-4">
+       <div className="flex items-center justify-between px-4 mb-5 border-2 rounded-md border-gray-400 active:scale-95 duration-500 ease-in-out" onClick={()=>{setDriver("saikat bera")}} >
         <div className="flex  justify-start items-center ">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXfR9cbcu-4PAVwQ3TiwGNid-Eh6JYr5QyDRJ2-7kzrQ&s=10"
@@ -33,6 +34,7 @@ const CarFoundPanel = ({carFoundPanel,setCarFoundPanel,setCarArrivingPanel}) => 
             <p className="text-sm text-gray-400">WB 30A 1234</p>
         </div>
       </div>
+     </div>
 
       {/* bottom  */}
       <div className="px-4">
