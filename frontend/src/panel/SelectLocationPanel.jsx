@@ -38,7 +38,7 @@ const SelectLocationPanel = ({
   };
 
   useEffect(()=>{
-console.log(placeName)
+
   },[placeName])
 
 

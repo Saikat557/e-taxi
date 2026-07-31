@@ -1,5 +1,5 @@
 
-import {useState,useEffect} from "react"
+import {useState,useEffect,useContext} from "react"
 import SelectLocationPanel from "../panel/SelectLocationPanel.jsx"
 import ConfirmLocationPanel from "../panel/ConfirmLocationPanel"
 import RideDetailsPanel from "../panel/RideDetailsPanel.jsx"
@@ -9,6 +9,8 @@ import CarFoundPanel from "../panel/CarFoundPanel.jsx"
 import CarArrivingPanel from "../panel/CarArrivingPanel.jsx"
 import ActiveRidePanel from "../panel/ActiveRidePanel.jsx"
 import RideCompletePanel from "../panel/RideCompletePanel.jsx"
+import {userContextValue} from "../context/userContext.jsx"
+
 const LandingPage = () => {
     const [locationPanel,setLocationPanel] = useState(false)
     const [confirmLocationPanel,setconfirmLocationPanel] = useState(false)
@@ -29,13 +31,11 @@ const LandingPage = () => {
     const [payment,setPayment] = useState("")
     const [driver,setDriver] = useState("")
 
-    useEffect(()=>{
-      console.log(pickup)
-      console.log(dest)
-      console.log(vehicle)
-      console.log(payment)
-      console.log(driver)
-    })
+    //context
+
+  
+
+    
 
 useEffect(()=>{
  
