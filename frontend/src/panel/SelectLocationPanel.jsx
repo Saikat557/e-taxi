@@ -14,6 +14,9 @@ const SelectLocationPanel = ({
   const [pickupClick,setPickupClick] = useState(false)
   const [destClick,setDestClick] = useState(false)
 
+  const [pickupInput,setPickupInput] = useState("")
+  const [destInput,setDestInput] = useState("")
+
   
 
   let timerId;
@@ -73,7 +76,9 @@ const SelectLocationPanel = ({
                 className="outline-none  w-full h-full py-2 "
                 onChange={(e) => {
                   handleInput(e);
+                  setPickupInput(e.target.value)
                 }}
+                value={pickupInput}
               />
             </div>
             <div
@@ -86,8 +91,10 @@ const SelectLocationPanel = ({
                 setDestClick(true)
                 setPickupClick(false)
               }}
+              value={destInput}
                onChange={(e) => {
                   handleInput(e);
+                  setDestInput(e.target.value)
                 }}
                 type="text"
                 placeholder="Drop Location"
@@ -115,11 +122,12 @@ const SelectLocationPanel = ({
        {
          if(pickupClick){
           setPickup(p.name)
+          setPickupInput(p.name)
        
         }
         if(destClick){
           setDest(p.name)
-         
+         setDestInput(p.name)
         }
        }
         }>{p.name}</div>})}

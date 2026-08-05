@@ -10,7 +10,7 @@ const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMeth
         }}>
           <div className="flex gap-2 justify-start items-center mb-5">
             <img
-              src="image/car-image.png"
+              src="/public/image/car-image.png"
               alt="car Image"
               className="w-25 h-15 object-cover bg-[#db7a9a] aspect-[7/3] rounded-xl mr-4"
             />
@@ -39,7 +39,7 @@ const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMeth
         }}>
           <div className="flex gap-2 justify-start items-center mb-5">
             <img
-              src="image/bike.png"
+              src="/public/image/bike.png"
               alt="car Image"
               className="w-25 h-15 object-cover bg-[#db7a9a] aspect-[7/3] rounded-xl mr-4"
             />
@@ -68,7 +68,7 @@ const RideDetailsPanel = ({rideDetailsPanel,setRideDetailsPanel , setPaymentMeth
         }}>
           <div className="flex gap-2 justify-start items-center mb-5 ">
             <img
-              src="image/auto.png"
+              src="/public/image/auto.png"
               alt="car Image"
               className="w-30 h-20  object-contain bg-[#fdb914] aspect-[7/3] rounded-xl mr-4"
             />

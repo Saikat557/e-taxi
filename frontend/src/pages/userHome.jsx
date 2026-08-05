@@ -1,7 +1,7 @@
 
 import {useState,useEffect,useContext} from "react"
 import SelectLocationPanel from "../panel/SelectLocationPanel.jsx"
-import ConfirmLocationPanel from "../panel/ConfirmLocationPanel"
+import ConfirmLocationPanel from "../panel/ConfirmLocationPanel.jsx"
 import RideDetailsPanel from "../panel/RideDetailsPanel.jsx"
 import PaymentMethodPanel from "../panel/PaymentMethod.jsx"
 import RiderSearchingPanel from "../panel/RiderSearchingPanel.jsx"
@@ -32,8 +32,8 @@ const LandingPage = () => {
     const [driver,setDriver] = useState("")
 
     //context
+const {user} = useContext(userContextValue)
 
-  
 
     
 

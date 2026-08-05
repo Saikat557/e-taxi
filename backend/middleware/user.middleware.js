@@ -1,7 +1,9 @@
 const {validateToken} = require("../services/jwt.service")
 
 const authUser = (req,res,next)=>{
-const token = req.cookies?.token || req.headers?.token.split(" ")[1]
+  console.log(req.headers)
+const token = req.cookies?.token || req.headers?.authorization.split(" ")[1]
+
 
 
 if(!token){

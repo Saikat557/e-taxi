@@ -1,6 +1,7 @@
 const express= require("express")
 const userRouter = require("./routes/user.route")
 const mapRouter = require("./routes/map.route")
+const captainRouter = require("./routes/captain.route")
 const cors = require("cors")
 require("dotenv").config()
 
@@ -17,5 +18,6 @@ app.get("/",(req,res)=>{
 
 app.use("/user",userRouter)
 app.use("/map",mapRouter)
+app.use('/captain',captainRouter)
 
 module.exports= app

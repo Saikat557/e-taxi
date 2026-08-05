@@ -7,16 +7,13 @@ const createToken = ({email,fullName}) =>{
     email,
     }
 
-    const token = jwt.sign(payLoad,process.env.JWT_SECRET_KEY)
+    const token = jwt.sign(payLoad, process.env.JWT_SECRET_KEY)
     return token
-
-
 }
 
-
-const validateToken=(token)=>{
-    const user = jwt.verify(token,process.env.JWT_SECRET_KEY)
+const validateToken = (token) => {
+    const user = jwt.verify(token, process.env.JWT_SECRET_KEY)
     return user
 }
 
-module.exports ={createToken,validateToken}
+module.exports = { createToken, validateToken }
